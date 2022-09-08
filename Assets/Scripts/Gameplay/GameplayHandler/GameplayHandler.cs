@@ -9,7 +9,7 @@ namespace TriviaGame.GameHandler
     public class GameplayHandler : MonoBehaviour
     {
         [SerializeField]
-        ScriptablePack pack;
+        ScriptablePack[] pack;
         [SerializeField]
         Text question;
         [SerializeField]
@@ -17,7 +17,7 @@ namespace TriviaGame.GameHandler
         [SerializeField]
         Image imageHint;
 
-        int levelIndex;
+        //int levelIndex;
 
 
         private void Start()
@@ -27,11 +27,11 @@ namespace TriviaGame.GameHandler
         private void Handler()
         {
 
-            question.text = pack.levelObject[levelIndex].question;
-            imageHint.sprite = pack.levelObject[levelIndex].hintImage;
+            question.text = pack[PackDatabase.packInstance.PackID].levelObject[PackDatabase.packInstance.LevelID].question;
+            imageHint.sprite = pack[PackDatabase.packInstance.PackID].levelObject[PackDatabase.packInstance.LevelID].hintImage;
             for (int i = 0; i < answers.Length; i++)
             {
-                answers[i].text = pack.levelObject[levelIndex].answer[i];
+                answers[i].text = pack[PackDatabase.packInstance.PackID].levelObject[PackDatabase.packInstance.LevelID].answer[i];
             }
         }
 

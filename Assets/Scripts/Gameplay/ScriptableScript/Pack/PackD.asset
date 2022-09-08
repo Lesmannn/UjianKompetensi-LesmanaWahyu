@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15f06b1c0079ae4d9c03dc0df9881c9, type: 3}
   m_Name: PackD
   m_EditorClassIdentifier: 
-  levelObject: []
+  levelObject:
+  - {fileID: 11400000, guid: 47b587bf15e8c4a4eafdd6fc244b0ada, type: 2}
+  - {fileID: 11400000, guid: 22aabb3cd19bfd04284a534b48d13c81, type: 2}
+  - {fileID: 11400000, guid: 9e831d45467ea05408889627cc0aa6b6, type: 2}
+  - {fileID: 11400000, guid: ea33542789aebe7498a0819e4276c658, type: 2}
+  - {fileID: 11400000, guid: d65782b9003fb634ebc9657427bcb0c1, type: 2}

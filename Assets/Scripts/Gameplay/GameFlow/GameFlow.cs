@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TriviaGame.GameHandler;
+using TriviaGame.Global;
 
-namespace TriviaGame.GameFlow
+namespace TriviaGame.GameFlows
 {
     public class GameFlow : MonoBehaviour
     {
@@ -15,7 +16,7 @@ namespace TriviaGame.GameFlow
         ScriptablePack[] pack;
         [SerializeField]
         Button[] choiceButton;
-        private int packType;
+        
 
         public System.Action OnLevelFinished;
         public void ChoiceClick(AnswerChoice choiceType)
@@ -43,16 +44,17 @@ namespace TriviaGame.GameFlow
         }
         private void CheckAnswer(int id)
         {
-            int packIndex = 0;
 
             while (true)
             {
-                if (id == pack[packIndex].levelObject[GameplayHandler.levelIndex].indexCorrect)
+                if (id == pack[PackDatabase.packInstance._packID].levelObject[PackDatabase.packInstance._levelID].indexCorrect)
                 {
                     Debug.Log("Benar");
-                    GameplayHandler.levelIndex += 1;
+                    Currency.currencyInstance.AddGold();
+                    SaveData.saveInstance.Save();
+                    PackDatabase.packInstance._levelID += 1;
                     OnLevelFinished?.Invoke();
-                    if (GameplayHandler.levelIndex < 5)
+                    if (PackDatabase.packInstance._levelID < 5)
                     {
                         SceneManager.LoadScene("Gameplay");
                     }

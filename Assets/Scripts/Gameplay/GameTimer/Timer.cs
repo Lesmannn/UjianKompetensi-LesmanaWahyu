@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace TriviaGame.GameTimer
 {
@@ -34,7 +35,7 @@ namespace TriviaGame.GameTimer
             {
                 initTime = 0;
                 OnTimeOver?.Invoke();
-                Time.timeScale = 0;
+                SceneManager.LoadScene("LevelSelect");
             }
             ShowTimer(initTime);
         }

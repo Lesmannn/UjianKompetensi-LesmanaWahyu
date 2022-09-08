@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TriviaGame.GameFlow;
+using TriviaGame.GameFlows;
 
 public class InputManager : MonoBehaviour
 {
