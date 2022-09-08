@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TriviaGame.Global;
 
 namespace TriviaGame.GameHandler
@@ -16,9 +17,15 @@ namespace TriviaGame.GameHandler
         Text[] answers;
         [SerializeField]
         Image imageHint;
+        [SerializeField]
+        Button backButton;
 
-        //int levelIndex;
+        private void Awake()
+        {
+            backButton.onClick.RemoveAllListeners();
+            backButton.onClick.AddListener(OpenGameplay);
 
+        }
 
         private void Start()
         {
@@ -34,6 +41,11 @@ namespace TriviaGame.GameHandler
                 answers[i].text = pack[PackDatabase.packInstance.PackID].levelObject[PackDatabase.packInstance.LevelID].answer[i];
             }
         }
+        private void OpenGameplay()
+        {
+            SceneManager.LoadScene("LevelSelect");
+        }
+
 
     }
 }

@@ -31,11 +31,6 @@ namespace TriviaGame.Global
             SaveData.saveInstance.Load();
         }
 
-        private void ChangePack()
-        {
-            _packID += 1;
-        }
-
     }
 
     [System.Serializable]

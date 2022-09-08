@@ -49,9 +49,9 @@ namespace TriviaGame.GameFlows
             {
                 if (id == pack[PackDatabase.packInstance._packID].levelObject[PackDatabase.packInstance._levelID].indexCorrect)
                 {
-                    Debug.Log("Benar");
                     Currency.currencyInstance.AddGold();
                     SaveData.saveInstance.Save();
+                    Analytic.analyticInstance.TrackFinishLevel();
                     PackDatabase.packInstance._levelID += 1;
                     OnLevelFinished?.Invoke();
                     if (PackDatabase.packInstance._levelID < 5)
@@ -66,7 +66,6 @@ namespace TriviaGame.GameFlows
                 }
                 else
                 {
-                    Debug.Log("Salah");
                     StartCoroutine(WaitTime());
                     break;
                 }

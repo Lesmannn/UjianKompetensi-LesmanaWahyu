@@ -27,7 +27,6 @@ namespace TriviaGame.Global
         {
             string json = JsonUtility.ToJson(this);
             PlayerPrefs.SetString(_prefsKey, json);
-            Debug.Log(json);
         }
 
         public void Load()

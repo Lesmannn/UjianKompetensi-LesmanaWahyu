@@ -9,7 +9,6 @@ namespace TriviaGame.Global
     {
         public static Analytic analyticInstance;
         
-        private GameFlow flowGame;
         private void Awake()
         {
             if (analyticInstance == null)
@@ -24,20 +23,20 @@ namespace TriviaGame.Global
         }
         private void OnEnable()
         {
-            flowGame.OnLevelFinished += TrackFinishLevel;
+            
         }
         private void OnDisable()
         {
-            flowGame.OnLevelFinished -= TrackFinishLevel;
+            
         }
 
         public void TrackFinishLevel()
         {
-            Debug.Log("Level Finished");
+            Debug.Log("Level Finished, Analytic Send");
         }
         public void TrackUnlockPack()
         {
-            Debug.Log("Pack Unlocked");
+            Debug.Log("Pack Unlocked, Analytic Send");
         }
 
     }
