@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ea81064524c7740ad39dc5bfc5bb67, type: 3}
+  m_Name: Level3
+  m_EditorClassIdentifier: 
+  question: Warna dari Daun ?
+  answer:
+  - Merah
+  - Biru
+  - Hijau
+  - Kuning
+  hintImage: {fileID: 21300000, guid: 874e4137b10eecd4a9d10a3d450a7689, type: 3}
+  indexCorrect: 3
